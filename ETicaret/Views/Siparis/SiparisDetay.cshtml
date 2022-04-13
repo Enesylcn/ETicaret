@@ -1,0 +1,41 @@
+﻿@using ETicaret.Models
+@model IEnumerable<SiparisDetay>
+
+@{ ViewBag.Title = "Sipariş Detay"; }
+
+<div class="jumbotron">
+    <h1>Sipariş Detay</h1>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToplamTutar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Urunler.UrunAdi)
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(m => item.Adet)
+    </td>
+
+    <td>
+        @Html.DisplayFor(m => item.ToplamTutar)
+    </td>
+    <td>
+        @Html.DisplayFor(m => item.Urunler.UrunAdi)
+    </td>
+</tr>
+}
+
+</table>
+
